@@ -15,7 +15,7 @@ const SingleUser = () => {
     const { id } = useParams();  
     const { isLoading, data } = useQuery(['post', id], () => singleUserFetcher(id), {
         refetchOnWindowFocus: false ,
-        cacheTime: 2
+        // cacheTime: 2
     })
 
 

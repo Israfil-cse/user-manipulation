@@ -16,8 +16,7 @@ import SingleUser from './Page/View/SingleUser';
 import Users from './Page/View/Users';
 
 function App() {
-  //default window focus stoper 
-  // {defaultOptions: {queries : {refetchOnWindowFocus:false}}}
+
   
 
   return (
