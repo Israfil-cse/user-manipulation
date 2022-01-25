@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 const SingleUserList = ({user}) => {
 
     const { userId, id, title, body } = user;
@@ -17,7 +16,7 @@ const SingleUserList = ({user}) => {
                     </div>
                     <h5 class="card-title">{title}</h5>
                     <p class="card-text">{body}</p>
-                    <Link to="/" class="btn btn-dark">Back to previous</Link>
+                    <Link to="/" class="btn btn-dark">Back to previous </Link>
                 </div>
             </div>
         </div>

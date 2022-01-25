@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const UsersList = ({ user }) => {
     const { id, userId, title, body } = user;
+ 
     return (
         <div class="card w-100 mt-3">
             <div class="card-header">
@@ -15,7 +17,7 @@ const UsersList = ({ user }) => {
                 </div>
                 <h5 class="card-title">{title}</h5>
                 <p class="card-text">{body}</p>
-                <Link to={`/user/${id}`} class="btn btn-dark">see more</Link>
+                <Link to={`/user/${id}`}  class="btn btn-dark">see more</Link>
             </div>
         </div>
     );

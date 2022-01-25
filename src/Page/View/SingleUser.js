@@ -3,6 +3,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import SingleUserList from '../../Components/SingleUser/SingleUserList';
+import queryClient from '../../Hooks/queryClient/client';
 
 
 const singleUserFetcher = async (id) => {
@@ -21,9 +22,15 @@ const SingleUser = () => {
         return <h2>loadding...</h2>
     }
 
+    const cachePost = queryClient.getQueryData(['post', id])
+    console.log(cachePost);
+
 
     return (
         <div className="container">
+            {
+                cachePost? (<h5 class="text-danger">visited</h5>) :''
+            }
             {
                 <SingleUserList user={data} />
             }
