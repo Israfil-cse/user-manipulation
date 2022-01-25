@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query'
+
+import { ReactQueryDevtools } from 'react-query/devtools'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import queryClient from './Hooks/queryClient/client';
+import SingleUser from './Page/View/SingleUser';
+import Users from './Page/View/Users';
 
 function App() {
+  //default window focus stoper 
+  // {defaultOptions: {queries : {refetchOnWindowFocus:false}}}
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <QueryClientProvider client={queryClient}>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Users />
+        </Route>
+        <Route path="/user/:id">
+          <SingleUser />
+        </Route>
+      </Switch>
+    </Router>
+
+    <ReactQueryDevtools/>
+    </QueryClientProvider>
+    
+    
+      
     </div>
   );
 }
